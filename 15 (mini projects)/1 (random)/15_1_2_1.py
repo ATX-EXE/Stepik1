@@ -1,4 +1,4 @@
-# TODO
+# TODO кидаем 2 кубика
 
 import random
 

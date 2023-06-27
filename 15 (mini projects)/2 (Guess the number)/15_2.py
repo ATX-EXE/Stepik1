@@ -54,24 +54,30 @@ def is_valid(st):
         return False
 
 
-def borders_num(num, x, y):
-    pass
+def borders_num(answer):
+    while True:
+        st = input()
+        # return int(st) if is_valid(st) else print(answer)
+        if is_valid(st):
+            st = int(st)
+            if st > 1 and st < 100000:
+                print('TEST borders_num True')
+                return st
+        else:
+            print('TEST borders_num False')
+            print(answer)
 
 
-def input_num(answer, x, y):
+def input_num(answer):
     while True:
         st = input()
         # return int(st) if is_valid(st) else print(answer)
         if is_valid(st):
             print('TEST input_num True')
             st = int(st)
-            if borders_num(st, x, y):
-                print('TEST borders_num True')
-                return
-            else:
-                print()
+            return st
         else:
-            print('TEST input_num True')
+            print('TEST input_num False')
             print(answer)
 
 
@@ -79,14 +85,14 @@ def input_num(answer, x, y):
 print('Добро пожаловать в числовую угадайку')
 while True:
     print('Введите правую границу числа:')
-    input_num('Требуется ввести число больше 1')
-    num = random.randint(1, 100)
+    last_num = input_num('Требуется ввести число больше 1')
+    num = random.randint(1, last_num)
     attempts = 0
 
     print('TEST Generated: ', num)
-    print('Угадай число от 1 до n')
+    print('Угадай число от 1 до', last_num)
     while True:
-        player_num = input_num('А может быть все-таки введем целое число от 1 до 100?')
+        player_num = input_num(('А может быть все-таки введем целое число от 1 до ', last_num, '?'))
         attempts += 1
         print('Попытка', number_to_words(attempts), '- Число', player_num)
         if player_num > num:
