@@ -30,7 +30,7 @@ def dictionary(phrase):
         case 'welcome':
             return '(dict) Добро пожаловать в игру угадай число'
         case 'menu':
-            return ['1. Играть", "2. Настройки", "3. Выход']
+            return ["1. Играть", "2. Настройки", "3. Выход"]
         case '<':
             return '(dict) Ваше число Меньше загаданного'
         case '>':
@@ -51,13 +51,18 @@ def input_num():
         if is_number(st): return int(st)
 
 
-def game_loop():  # Цикл игры
-    pass
+def menu_loop():    # Цикл меню
+    for i in dictionary("menu"):
+        print(dictionary("menu")[0])
 
+def game_loop():    # Цикл игры
+    pass
 
 while True:  # Основной цикл
     print(dictionary('welcome'))
     print(dictionary('menu'))
+
+    menu_loop()
     
     game_loop()
 

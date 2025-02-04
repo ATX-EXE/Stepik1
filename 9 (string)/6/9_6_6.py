@@ -14,7 +14,7 @@
 # Программа должна вывести одну строку – декодированное сообщение. Обратите внимание,
 # что нужно декодировать сообщение, а не закодировать.
 
-num, str = int(input()), input()
+num, str = int(input("Shift: ")), input("String: ")
 for i in str:
     ordnum = ord(i)
     if ordnum - num < 97:
